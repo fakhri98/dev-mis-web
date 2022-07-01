@@ -1,4 +1,4 @@
-function logoLock() {
+function LogoLock() {
   return (
     <svg width="26" height="26" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
       <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
@@ -6,4 +6,4 @@ function logoLock() {
     </svg>
   )
 }
-export default logoLock
+export default LogoLock
