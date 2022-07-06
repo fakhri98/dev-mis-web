@@ -1,8 +1,8 @@
-import IconPerson from "../icons/IconPerson";
+import IconPerson from "../../icons/IconPerson";
 
 const Card = () => {
   return (
-    <div className="w-80 lg:h-auto border-2 flex-none rounded-md text-left drop-shadow-md">
+    <div className="flex w-80 lg:h-auto bg-white border-2 rounded-md text-left drop-shadow-md">
       <div className="p-3">
         <IconPerson /> Total Relawan
       </div>
