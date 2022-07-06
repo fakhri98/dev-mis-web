@@ -15,7 +15,7 @@ const Header = () => {
             <HeaderItem title="Project" path="/project" />
             <HeaderItem title="Emergencies" path="/emergencies" />
             <HeaderItem title="Relawan" path="/relawan" />
-            <HeaderItem title="Home" path="/" />
+            <HeaderItem title="Home" path="/home" />
         </div>
       </div>
 

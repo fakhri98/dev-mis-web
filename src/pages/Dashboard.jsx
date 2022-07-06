@@ -1,11 +1,10 @@
 import Header from "./BaseLayout/Header";
 import Card from "./BaseLayout/Card";
 
-const Homepage = () => {
+const Dashboard = () => {
   return (
     <div>
       <div>
-        <Header />
         <Card />
 
       </div>
@@ -13,4 +12,4 @@ const Homepage = () => {
   );
 };
 
-export default Homepage;
+export default Dashboard;
