@@ -1,0 +1,9 @@
+.hamburger .line {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: black;  
+  margin-block: 5px;
+  border-radius: 2px;
+  transition: transform .5s, opacity .5s;
+}

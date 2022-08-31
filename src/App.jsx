@@ -20,8 +20,8 @@ const App = () => {
           <Route path="/project" element={<Projects />}> 
             <Route path=":id" element={<ContentProjects />} />
           </Route>
-      </Route>
-      <Route path="/login" element={<Login />} />
+        </Route>
+        <Route path="/login" element={<Login />} />
       </Routes>
     </div>
   )

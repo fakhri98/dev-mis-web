@@ -6,9 +6,9 @@ import { Outlet } from 'react-router-dom';
 const Header = () => {
   return (
 
-    <div className='w-full h-20 border-b-2 border-red-500'>
+    <div className='w-full h-20 border-b-4 border-red-500'>
       <div className='flex justify-between'>
-        <img className='h-16 pl-3 pt-3' src={LogoPMI} alt="logoPMI"/>
+        <img className='h-14 pl-3 pt-3' src={LogoPMI} alt="logoPMI"/>
 
         <div className='flex flex-row-reverse'>
             <HeaderItem title="Login" path="/login" />
