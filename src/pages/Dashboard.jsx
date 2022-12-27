@@ -6,12 +6,16 @@ import Card from "./BaseLayout/Card";
 const Dashboard = () => {
   return (
     <div>
-      <div className="grid grid-cols-4 gap-6">
-        {/* <ButtonSidebar/> */}
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+      <Header />
+      <div className="p-2">
+        <div className="grid grid-cols-4 gap-5">
+          {/* <ButtonSidebar/> */}
+          <div><Card /></div>
+          <div><Card /></div>
+          <div><Card /></div>
+          <div><Card /></div>
+          <div><Card /></div>
+        </div>
       </div>
     </div>
   );

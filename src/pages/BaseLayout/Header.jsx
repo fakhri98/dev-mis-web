@@ -5,8 +5,7 @@ import { Outlet } from 'react-router-dom';
 
 const Header = () => {
   return (
-
-    <div className='w-full h-20 border-b-4 border-red-500'>
+    <div className='w-full h-20 border-b-4 border-red-500 mb-5'>
       <div className='flex justify-between'>
         <img className='h-14 pl-3 pt-3' src={LogoPMI} alt="logoPMI"/>
 
@@ -15,13 +14,11 @@ const Header = () => {
             <HeaderItem title="Project" path="/project" />
             <HeaderItem title="Emergencies" path="/emergencies" />
             <HeaderItem title="Relawan" path="/relawan" />
-            <HeaderItem title="Home" path="/home" />
+            <HeaderItem title="PMI Level" path="/pmilevel" />
+            <HeaderItem title="Home" path="/" />
         </div>
       </div>
 
-      <div className="p-5 w-full mt-5">
-        <Outlet />
-      </div>
     </div>
   );
 };

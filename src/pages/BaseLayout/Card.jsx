@@ -1,14 +1,14 @@
 import IconPerson from "../../icons/IconPerson";
-import MultiplePersons from "../../icons/MultiplePersons";
-import MultiplePersons2 from "../../icons/MultiplePersons2";
+// import MultiplePersons from "../../icons/MultiplePersons";
+// import MultiplePersons2 from "../../icons/MultiplePersons2";
 
-function Card ({ iconVariant="iconPerson1", onClick , children }) {
+function Card ({ iconVariant="iconPerson", onClick , children }) {
   const icon = {
-    iconPerson1: <IconPerson />,
+    iconPerson: <IconPerson />,
   };
 
   return (
-    <div className="w-72 lg:h-auto bg-white border-2 rounded-md text-left drop-shadow-md">
+    <div className="w-72 bg-white border-2 rounded-md text-left drop-shadow-md">
       <div className="flex flex-nowrap divide-x-2 divide-red-400">
         <div 
           className="p-3"

@@ -34,7 +34,7 @@ function Button({ colorVariant = "danger", textVariant='black', widthVariant='fu
 
   return (
     <button
-      className={`${width[widthVariant]} ${height[heightVariant]} ${color[colorVariant]} ${text[textVariant]} rounded-md font-bold hover:text-black`}
+      className={`${width[widthVariant]} ${height[heightVariant]} ${color[colorVariant]} ${text[textVariant]} rounded-md font-bold hover:text-black mx-2`}
       onClick={onClick}
     >
       {children}

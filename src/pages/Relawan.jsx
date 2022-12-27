@@ -1,5 +1,6 @@
 import React from "react";
 import useSWR from "swr";
+import Header from "./BaseLayout/Header";
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
@@ -15,6 +16,7 @@ const Relawan = () => {
 
   return (
     <div className="relative">
+      <Header />
       <table className=" table-auto">
         <thead>
           <tr className="border-b-2 border-gray-200">
