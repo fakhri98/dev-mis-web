@@ -1,40 +1,54 @@
-import React from "react";
-import {Button, Input} from "../components";
-import {Route, Routes} from "react-router-dom";
-import Dashboard from "./Dashboard";
-import authLogin from "../utils/authLogin";
+import React, {useState} from "react";
+import {BASE_URL} from "../config/config"
+import { Outlet, useNavigate } from "react-router-dom";
 
-const Login = () => {
-  const [toggle, setToggle] = React.useState(false);
+function LoginForm() {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    fetch(`${BASE_URL}/user/login`, {
+      method: 'POST',
+      body: JSON.stringify({ username, password }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error('User not found');
+      }
+    })
+    .then(data => {
+        localStorage.setItem('token', data.token);
+        // Redirect the user to the home page
+        navigate('/')
+      })
+      .catch(error => console.error(error));
+  };
 
   return (
-    <div className="w-full flex justify-center min-h-screen items-center">
-      <div className="w-[1000px] sm:w-[600px] border border-slate-500 px-4 py-4 space-y-6 rounded-lg">
-        <form method="post">
-          <Input 
-            title="Username" 
-            type="text" 
-            id="username"
-            placeholder="Input your username"
-          />
-          <Input
-            title="Password"
-            type="password"
-            id="password"
-            placeholder="Input your password"
-          />
-          <Button widthVariant="small" textVariant="white" colorVariant="info" onClick={authLogin}>
-            Login
-          </Button>
-          <Button widthVariant="small" textVariant="white">
-            Cancel
-          </Button>
-          {/* <button type="button">Login </button> */}
-        </form>
-        
-      </div>
-    </div>
-  );
-};
+    <form onSubmit={handleFormSubmit}>
+      <label>
+        Username:
+        <input type="text" value={username} onChange={event => setUsername(event.target.value)} />
+      </label>
+      <br />
+      <label>
+        Password:
+        <input type="password" value={password} onChange={event => setPassword(event.target.value)} />
+      </label>
+      <br />
+      <button type="submit">Submit</button>
 
-export default Login;
+      <Outlet />
+    </form>
+  );
+}
+
+
+export default LoginForm;

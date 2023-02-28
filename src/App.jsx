@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import Relawan from "./pages/Relawan";
 import Emergencies from "./pages/emergencies";
-import Login from "./pages/Login";
+import LoginForm from "./pages/Login";
 import Projects from "./pages/Projects/Project";
 import ContentProjects from "./pages/Projects/contentProjects";
 import Header from "./pages/BaseLayout/Header";
@@ -23,7 +23,7 @@ const App = () => {
             <Route path=":id" element={<ContentProjects />} />
           </Route>
         </Route>
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<LoginForm />} />
       </Routes>
     </div>
   )

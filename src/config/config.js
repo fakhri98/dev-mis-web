@@ -1,8 +1,3 @@
-require("dotenv").config({ path: process.cwd() + "/config/.env" });
+// config.js
 
-module.exports = {
-  development: {
-    url: process.env.DB_URL,
-    dialect: "postgres",
-  },
-};
+export const BASE_URL = "http://localhost:4000/api/v1";

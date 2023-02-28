@@ -1,12 +1,27 @@
 import React from "react";
 import useSWR from "swr";
-import axios from "axios";
+import { Outlet, useNavigate } from "react-router-dom";
+// import axios from "axios";
+import {BASE_URL} from "../config/config"
+// import { getToken } from "../config/auth";
+import Header from "./BaseLayout/Header";
 
-const fetcher = (url) => axios.get(url).then((res) => res.data);
+
+function fetchData(url, token) {
+  return fetch(url, {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  }).then(res => res.json());
+}
+
+// console.log(fetcher());
+
 
 const GetPmiLevelList = () => {
-
-  const { data, error } = useSWR("https://api.pmi.or.id/api/v1/master/organisasi/pmi-level", fetcher);
+  const token = localStorage.getItem('token')
+  // focus in here, trying to fetch data using useSWR from REST API
+  const { data, error } = useSWR([`${BASE_URL}/master/organisasi/pmi-level`, token], fetchData);
 
     if (error) return <div>failed to load</div>;
     if (!data) return <div>loading...</div>;
@@ -14,27 +29,14 @@ const GetPmiLevelList = () => {
   return (
     <div className="relative">
       <Header />
-      <table className=" table-auto">
-        <thead>
-          <tr className="border-b-2 border-gray-200">
-            {/* <th>id</th> */}
-            <th>nama</th>
-            {/* <th>email</th>
-            <th>city</th> */}
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr className="border-b-2 border-gray-200">
-            <td>{data.nama}</td>
-
-          </tr>
-
-        </tbody>
-      </table>
+      <div>
+        <div>{ JSON.stringify(data) }</div>
+      </div>
     </div>
   );
 };
+
+//////////////////////////////////////////////////
 
 // const GetPmiLevelList = (req, res) => {
 //   try {

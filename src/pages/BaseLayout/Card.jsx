@@ -12,10 +12,7 @@ function Card ({ iconVariant="iconPerson", onClick , children }) {
       <div className="flex flex-nowrap divide-x-2 divide-red-400">
         <div 
           className="p-3"
-          // onClick={onClick}
         > <IconPerson />
-          {/* {children} */}
-          {/* <MultiplePersons /> Total Relawan */}
         </div>
         <div className="p-3 ml-3 my-3">
           <p className="text-red-500 text-2xl"> 1.000.000 </p>
