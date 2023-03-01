@@ -1,4 +1,4 @@
-function Button({ colorVariant = "danger", textVariant='black', widthVariant='full', heightVariant='sm', positionVariant='right', onClick, children }) {
+function Button({ colorVariant = "danger", textVariant='black', widthVariant='full', heightVariant='sm', typeVariant='button', positionVariant='right', onClick, children }) {
   const color = {
     primary: "bg-blue-700",
     secondary: "bg-gray-500",
@@ -26,6 +26,12 @@ function Button({ colorVariant = "danger", textVariant='black', widthVariant='fu
     lg: "h-24",
   }
 
+  const type = {
+    button: "button",
+    submit: "submit",
+    reset: "reset",
+  }
+
   const position = {
     right: "absolute right-3",
     left: "absolute left-0",
@@ -34,7 +40,7 @@ function Button({ colorVariant = "danger", textVariant='black', widthVariant='fu
 
   return (
     <button
-      className={`${width[widthVariant]} ${height[heightVariant]} ${color[colorVariant]} ${text[textVariant]} rounded-md font-bold hover:text-black mx-2`}
+      className={`${width[widthVariant]} ${height[heightVariant]} ${color[colorVariant]} ${text[textVariant]} ${type[typeVariant]} rounded-md font-bold hover:text-black`}
       onClick={onClick}
     >
       {children}
